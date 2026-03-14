@@ -1,0 +1,324 @@
+/* Modern GitHub Profile Finder Styles */
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-color: #58a6ff;
+    --button-bg: #238636;
+    --button-hover: #2ea043;
+    --danger-color: #f85149;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --border-radius: 12px;
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header i {
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.search-bar {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 8px 8px 8px 20px;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.search-bar:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+.search-icon {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+#search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    outline: none;
+}
+
+#search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+#search-button {
+    background-color: var(--button-bg);
+    color: white;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#search-button:hover {
+    background-color: var(--button-hover);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-header {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.profile-info-top h2 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.profile-info-top .username {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.joined {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.location {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.bio {
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 18px 20px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.repos h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.repo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.repo-item {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.repo-item:hover {
+    border-color: var(--text-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.repo-name {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.repo-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#error-message {
+    background-color: rgba(248, 81, 73, 0.1);
+    border: 1px solid rgba(248, 81, 73, 0.4);
+    color: var(--danger-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-info-top {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .joined {
+        margin-top: 5px;
+    }
+
+    .location {
+        justify-content: center;
+    }
+}
